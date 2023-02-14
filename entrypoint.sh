@@ -42,8 +42,17 @@ if ! flyctl status --app "$app"; then
   # Restore the original config file
   cp "$config.bak" "$config"
 fi
+
+# Use flyctl to import secrets.
+
+# The old way
+# if [ -n "$INPUT_SECRETS" ]; then
+#   echo $INPUT_SECRETS | tr " " "\n" | flyctl secrets import --app "$app"
+# fi
+
+# The new way which handles spaces in secret values
 if [ -n "$INPUT_SECRETS" ]; then
-  echo $INPUT_SECRETS | tr " " "\n" | flyctl secrets import --app "$app"
+  echo $INPUT_SECRETS | flyctl secrets import --app "$app"
 fi
 
 # Scale the VM before the deploy.

@@ -17,6 +17,7 @@ If you have an existing `fly.toml` in your repo, this action will copy it with a
 | `org`      | Which Fly organization to launch the app under. Alternatively, set the env `FLY_ORG`. Defaults to `personal`.                                                                                            |
 | `path`     | Path to run the `flyctl` commands from. Useful if you have an existing `fly.toml` in a subdirectory.                                                                                                     |
 | `postgres` | Optional name of an existing Postgres cluster to `flyctl postgres attach` to.                                                                                                                            |
+| `secrets`  | Secrets to be set on the app. Separate multiple secrets with a space.                                                                                                                                    |
 
 ## Required Secrets
 
