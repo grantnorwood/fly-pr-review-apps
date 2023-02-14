@@ -51,7 +51,11 @@ fi
 # fi
 
 # The new way which handles spaces in secret values
+# TODO: remove log statements below
 if [ -n "$INPUT_SECRETS" ]; then
+  echo "🪵🪵🪵" 
+  echo $INPUT_SECRETS
+  echo "🪵🪵🪵"
   echo $INPUT_SECRETS | flyctl secrets import --app "$app"
 fi
 
